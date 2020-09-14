@@ -1,0 +1,15 @@
+insertionSort(a[], n)
+    for (i <- 1 + 1; i <= n; i + 1) do {
+        v <- a[i];
+        j <- i;
+        while (a[j - 1] > v) do {
+            a[j] <- a[j - 1];
+            j <- j - 1;
+        }
+        a[j] <- v;
+    }
+end insertionSort()
+
+삽입정렬은 매우 민감함
+거의 정렬된 리스트에서는 이를 사용해야 함
+버블정렬은 덜 민감함

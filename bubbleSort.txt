@@ -1,0 +1,5 @@
+bubbleSort(a[], n)
+    for (i <- n; i >= 2; i <- i - 1) do
+        for (j <- 1; j <= i-1; j <- j+1) do
+            if (a[j] > a[j+1]) then a[j]와 a[j+1]을 교환;
+end bubbleSort

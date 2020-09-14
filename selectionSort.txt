@@ -1,0 +1,9 @@
+selectionSort(a[], n)
+    for (i <- 1; i <= n-1; i <- i + 1 ) do {
+        minIndex <- i;
+        for (j <- i + 1; j <= n; j <- j + 1) do {
+            if (a[j] < a[minIndex]) then minIndex <- j;
+        }
+        a[i]와 a[minIndex]를 교환;
+    }
+end selectionSort()

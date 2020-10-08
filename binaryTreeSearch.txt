@@ -1,0 +1,22 @@
+BinaryTreeSearch(B, search_key)
+  x ← B;
+  while (x ≠ null) do {
+      if (x.key = search_key) then return x.key; // 탐색 성공
+      if (x.key > search_key) then x ← x.left; // 탐색 키가 작으므로 왼쪽 서브트리 탐색
+      else x ← x.right; // 탐색 키가 크므로 오른쪽 서브트리 탐색
+  return –1; // 탐색 실패
+end BinaryTreeSearch()
+
+insert(B, v)
+  x ← B; 
+  p ← B;
+  while (x = null) do {
+      p ← x;
+      if (x.key = v) then return;
+      if (x.key > v) then x ← x.left;
+      else x ← x.right;
+  }
+  x.key ← key 값이 v인 새로운 노드;
+  if (p.key > v) then p.left ← x;
+  else p.right ← x;
+end insert()

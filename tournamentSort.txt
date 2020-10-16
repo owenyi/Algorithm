@@ -1,0 +1,57 @@
+tournamentSort(a[], n)
+    //b만들기
+    N ← 1;
+    while (N < n) do {
+        N ← N*2;
+    }
+    b[] ← N*2 크기의 0으로 구성된 배열;
+    for (j ← 0; j < n; j ← j + 1) do {
+        b[N + j] ← a[j + 1]
+    }
+    //토너먼트
+    for (i ← 0; i < n; i ← i + 1) do {
+        for (j ← N*2 - 1; j > 2; j ← j - 2) do {
+            if (b[j] > b[j - 1]) then {
+                b[j/2] ← b[j];
+            }
+            else {
+                b[j/2] ← b[j - 1];
+            }
+        }
+        a[n - i] ← b[1];
+        for (k ← N; k < N*2; N ← N + 1) do {
+            if (b[k] = b[1]) then{
+                b[k] ← 0;
+                break;
+            } 
+        }
+    }
+end tournamentSort()
+
+tournamentSort(a[], n)
+    //b만들기
+    N ← 1;
+    while (N < n) do {
+        N ← N*2;
+    }
+    b[] ← [];
+    for (i ← 0; i <= N*2; i ← i + 1) do {
+        b에 [0, 0]삽입;
+    }
+    for (j ← 0; j < n; j ← j + 1) do {
+        b[N + j] ← [N + j, a[j + 1]];
+    }
+    //토너먼트
+    for (i ← 0; i < n; i ← i + 1) do {
+        for (j ← N*2 - 1; j > 2; j ← j - 2) do {
+            if (b[j][1] > b[j - 1][1]) then {
+                b[j/2] ← b[j];
+            }
+            else {
+                b[j/2] ← b[j - 1];
+            }
+        }
+        a[n - i] ← b[1][1];
+        b[b[1][0]] ← [0, 0];
+    }
+end tournamentSort()

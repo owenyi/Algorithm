@@ -1,0 +1,30 @@
+
+
+insert(B, v)
+  x ← B;
+  p ← B;
+  while (x = null) do {
+      g ← p; 
+      p ← x;
+      if (x.key = v) then return;
+      if (x.key > v) then {
+        x.left_height ← x.left_height + 1;
+        x ← x.left;
+        if (x.left_height - x.right_height = 2) then {
+          gg ← x;
+          g ← x.left;
+        }
+      }
+      else {
+        x.right_height ← x.right_height + 1;
+        if (x.right_height - x.left_height = 2) then {
+          gg ← x;
+          g ← x.right;
+        }
+        x ← x.right;
+      }
+  }
+  x.key ← key 값이 v인 새로운 노드;
+  if (p.key > v) then p.left ← x;
+  else p.right ← x;
+end insert()

@@ -1,0 +1,4 @@
+KMP(p[], t[])
+    M ← 패턴의길이; N ← 텍스트의 길이;
+    InitNext(p);
+    for (i ←)

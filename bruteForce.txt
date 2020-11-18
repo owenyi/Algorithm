@@ -1,0 +1,11 @@
+bruteForce(p[], t[])
+    M ← 패턴의길이; N ← 텍스트의 길이;
+    for (i ← 0, j ← 0; j < M and i < N; i ← i + 1, j ← j + 1) do {
+        if (t[i] != p[j]) then {
+            i ← i - j;
+            j ← -1;
+        }
+    }
+    if (j = M) then return i - M;
+    else return il
+end bruteForce
